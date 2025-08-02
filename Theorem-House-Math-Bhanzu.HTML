@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Theorem House - Math Bhanzu Edition</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: #f9fafb;
+      color: #1c2733;
+    }
+    header {
+      background: linear-gradient(90deg, #007ACC, #00D1FF);
+      color: white;
+      display: flex;
+      align-items: center;
+      padding: 12px 24px;
+      box-shadow: 0 4px 15px rgba(0, 122, 204, 0.4);
+    }
+    .logo {
+      width: 180px;
+      height: 60px;
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 20px;
+      background-color: white;
+    }
+    .logo img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      display: block;
+      border-radius: 12px;
+    }
+    .slogan {
+      font-size: 20px;
+      font-weight: 600;
+      user-select: none;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    }
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px 40px 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+    iframe.magazine {
+      width: 100%;
+      height: 650px;
+      border: 3px solid #007ACC;
+      border-radius: 8px;
+      display: block;
+      box-shadow: 0 8px 20px rgba(0, 122, 204, 0.3);
+    }
+    .interactive-section {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+    .about-bhanzu {
+      font-size: 16px;
+      line-height: 1.5;
+      color: #004466;
+      padding-bottom: 15px;
+      border-bottom: 2px solid #00D1FF;
+      margin-bottom: 10px;
+    }
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 6px 14px rgba(0, 209, 255, 0.25);
+    }
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    .puzzle-box {
+      background: #e0f7ff;
+      border: 2px solid #007ACC;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0, 122, 204, 0.3);
+      color: #004466;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      font-weight: 600;
+    }
+    .puzzle-box input[type="number"] {
+      width: 80px;
+      padding: 8px;
+      font-size: 16px;
+      border: 2px solid #007ACC;
+      border-radius: 8px;
+      margin: 10px 0;
+      text-align: center;
+    }
+    .puzzle-box button {
+      background-color: #007ACC;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 700;
+      transition: background-color 0.3s ease;
+    }
+    .puzzle-box button:hover {
+      background-color: #005f99;
+    }
+    .puzzle-result {
+      margin-top: 15px;
+      min-height: 24px;
+      font-weight: 700;
+      user-select: none;
+    }
+    footer {
+      text-align: center;
+      padding: 15px 10px;
+      color: #777;
+      font-size: 14px;
+      user-select: none;
+      margin-top: 30px;
+      font-style: italic;
+    }
+    @media (max-width: 800px) {
+      main {
+        max-width: 100%;
+        margin: 20px 10px 40px 10px;
+      }
+      iframe.magazine {
+        height: 450px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="Screenshot_2025-08-02_010227-removebg-preview.png" alt="Theorem House Logo" />
+    </div>
+    <div class="slogan">Master Math the Fun Way!</div>
+  </header>
+
+  <main>
+    <iframe
+      src="https://www.flipbookpdf.net/web/site/e2addc5852b205ef34fde33376ce480028cff483202508.pdf.html"
+      class="magazine"
+      frameborder="0"
+      allowfullscreen
+      aria-label="Math Bhanzu Magazine"
+    ></iframe>
+
+    <section class="interactive-section">
+      <div class="about-bhanzu">
+        <h2>About Math Bhanzu</h2>
+        <p>
+          Math Bhanzu is an innovative platform focused on teaching math through shortcuts and interactive
+          methods to help students solve problems quickly and confidently. Dive into their techniques,
+          puzzles, and the joy of math with us!
+        </p>
+      </div>
+
+      <div class="video-wrapper">
+        <iframe
+          src="https://www.youtube.com/embed/6weJp1JkFcg?start=67"
+          title="Math Bhanzu Video"
+          allowfullscreen
+        ></iframe>
+      </div>
+
+      <div class="puzzle-box">
+        <h3>Quick Math Puzzle</h3>
+        <p><strong>Find the missing number:</strong></p>
+        <p id="puzzle-sequence">5, 10, 20, 40, ?</p>
+        <input type="number" id="puzzle-input" autocomplete="off" />
+        <button id="puzzle-check">Check Answer</button>
+        <div id="puzzle-result" class="puzzle-result"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div id="dynamic-quote"></div>
+    <div style="margin-top: 8px;">Created by Ranveer Singh Saini</div>
+  </footer>
+
+  <script>
+    const puzzles = [
+      { sequence: "5, 10, 20, 40, ?", answer: 80, hint: "Each number doubles the previous one." },
+      { sequence: "2, 4, 8, 16, ?", answer: 32, hint: "Each number doubles." },
+      { sequence: "1, 4, 9, 16, ?", answer: 25, hint: "Squares of natural numbers." },
+      { sequence: "3, 6, 12, 24, ?", answer: 48, hint: "Multiply by 2." },
+      { sequence: "10, 7, 4, 1, ?", answer: -2, hint: "Subtract 3 each time." },
+      { sequence: "1, 1, 2, 3, 5, ?", answer: 8, hint: "Fibonacci sequence." }
+    ];
+
+    let currentPuzzleIndex = -1;
+
+    const puzzleSequenceEl = document.getElementById("puzzle-sequence");
+    const input = document.getElementById("puzzle-input");
+    const button = document.getElementById("puzzle-check");
+    const result = document.getElementById("puzzle-result");
+
+    function pickRandomPuzzle() {
+      let newIndex;
+      do {
+        newIndex = Math.floor(Math.random() * puzzles.length);
+      } while (newIndex === currentPuzzleIndex);
+      currentPuzzleIndex = newIndex;
+      const puzzle = puzzles[currentPuzzleIndex];
+      puzzleSequenceEl.textContent = puzzle.sequence;
+      result.textContent = "";
+      input.value = "";
+    }
+
+    button.addEventListener("click", () => {
+      const val = Number(input.value);
+      if (input.value.trim() === "") {
+        result.textContent = "Please enter a number.";
+        result.style.color = "crimson";
+        return;
+      }
+      const correctAnswer = puzzles[currentPuzzleIndex].answer;
+      if (val === correctAnswer) {
+        result.textContent = "Correct! " + puzzles[currentPuzzleIndex].hint;
+        result.style.color = "green";
+        setTimeout(() => pickRandomPuzzle(), 2000);
+      } else {
+        result.textContent = "Try again! Hint: " + puzzles[currentPuzzleIndex].hint;
+        result.style.color = "crimson";
+      }
+    });
+
+    input.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") button.click();
+    });
+
+    const quotes = [
+      `"Mathematics is not about numbers, equations, computations, or algorithms: it is about understanding." — William Paul Thurston`,
+      `"Pure mathematics is, in its way, the poetry of logical ideas." — Albert Einstein`,
+      `"Go down deep enough into anything and you will find mathematics." — Dean Schlicter`,
+      `"Mathematics knows no races or geographic boundaries; for mathematics, the cultural world is one country." — David Hilbert`,
+      `"The only way to learn mathematics is to do mathematics." — Paul Halmos`,
+      `"Mathematics is the music of reason." — James Joseph Sylvester`,
+      `"Without mathematics, there’s nothing you can do. Everything around you is mathematics. Everything around you is numbers." — Shakuntala Devi`
+    ];
+
+    function displayRandomQuote() {
+      const quoteDiv = document.getElementById("dynamic-quote");
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      quoteDiv.textContent = quotes[randomIndex];
+    }
+
+ window.onload = () => {
+  displayRandomQuote();
+  pickRandomPuzzle();
+  setTimeout(() => window.scrollTo(0, 0), 50);
+};
+
+  </script>
+</body>
+</html>
